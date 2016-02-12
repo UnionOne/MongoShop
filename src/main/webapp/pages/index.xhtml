@@ -6,13 +6,24 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-   <title>Mongo</title>
-   <h:outputStylesheet library="css" name="style.css"/>
+    <title>Mongo</title>
+    <h:outputStylesheet library="css" name="style.css"/>
 </h:head>
 
 <h:body>
-   <h3 class="header">Mongo Shop</h3>
-   <h:graphicImage value="/faces/resources/img/logo.jpg" styleClass="logo"/>
-   <h:panelGroup layout="block" styleClass="block"/>
+    <h3 class="header">Mongo Shop</h3>
+    <h:graphicImage value="/faces/resources/img/logo.jpg" styleClass="logo"/>
+    <h:panelGroup layout="block" styleClass="block">
+        <h:graphicImage value="/faces/resources/img/search.png" styleClass="searchImage"/>
+        <h:link value="Search" styleClass="link"/>
+        <h:outputText value="&#160;"/>
+        <h:outputText value="&#160;"/>
+        <h:graphicImage value="/faces/resources/img/file.png" styleClass="fileImage"/>
+        <h:link value="New Product" styleClass="link"/>
+    </h:panelGroup>
+    <h:panelGroup layout="block" styleClass="searchHeader">
+        <h:outputText value="Product Search"/>
+    </h:panelGroup>
+
 </h:body>
 </html>

@@ -6,7 +6,7 @@
 
 .logo {
     width: 50%;
-    height: 25%;
+    height: 20%;
     border: 4px solid navy;
     background-size: cover;
     position: absolute;
@@ -16,9 +16,36 @@
 
 .block {
     width: 50%;
-    height: 10%;
+    height: 5%;
     position: absolute;
     left: 25%;
     border: 4px solid navy;
-    top: 39%;
+    top: 30%;
+}
+
+.searchImage {
+    width: 1%;
+    height: 20%;
+}
+
+.fileImage {
+    width: 1%;
+    height: 20%;
+}
+
+.link {
+    text-decoration: none;
+}
+
+/* Data Table */
+
+.searchHeader {
+    width: 50%;
+    height: 3%;
+    position: absolute;
+    border: 4px solid navy;
+    left: 25%;
+    top: 36%;
+    text-align: center;
+    font-weight: bold;
 }
