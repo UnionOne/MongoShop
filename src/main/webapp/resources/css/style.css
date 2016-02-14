@@ -4,48 +4,49 @@
     color: cadetblue;
 }
 
-.logo {
+.wrapper {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 50%;
-    height: 20%;
-    border: 4px solid navy;
-    background-size: cover;
-    position: absolute;
-    left: 25%;
-    text-align: center;
+    margin: 0 0 0 25%;
 }
 
-.block {
-    width: 50%;
-    height: 5%;
-    position: absolute;
-    left: 25%;
-    border: 4px solid navy;
-    top: 30%;
+.image-block {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    height: 150px;
+}
+
+.image {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+}
+
+.search-panel {
+    height: 25px;
+    border-right: 1px solid rgba(0,0,0,0.5);
+    border-left: 1px solid rgba(0,0,0,0.5);
 }
 
 .searchImage {
-    width: 1%;
-    height: 20%;
+    width: 10px;
+    height: 10px;
 }
 
 .fileImage {
-    width: 1%;
-    height: 20%;
+    width: 10px;
+    height: 10px;
 }
 
 .link {
     text-decoration: none;
 }
 
-/* Data Table */
-
-.searchHeader {
-    width: 50%;
-    height: 3%;
-    position: absolute;
-    border: 4px solid navy;
-    left: 25%;
-    top: 36%;
+.product-search {
+    height: 20px;
+    border: 1px solid rgba(0,0,0,0.5);
     text-align: center;
     font-weight: bold;
+    background-color: aliceblue;
 }
+
+/* Data Table */

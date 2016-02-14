@@ -5,18 +5,9 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-
-<h:head>
-    <title>Mongo</title>
-    <h:outputStylesheet library="css" name="style.css"/>
-</h:head>
-
-<h:body>
-    <h3 class="header">Mongo Shop</h3>
-    <h:panelGroup layout="block" styleClass="wrapper">
-        <ui:include src="image.xhtml"/>
-        <ui:include src="search-panel.xhtml"/>
-        <ui:include src="product-search.xhtml"/>
+<f:view>
+    <h:panelGroup layout="block" styleClass="product-search">
+        <h:outputText value="Product Search"/>
     </h:panelGroup>
-</h:body>
+</f:view>
 </html>
