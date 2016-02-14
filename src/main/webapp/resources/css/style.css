@@ -11,7 +11,7 @@
 }
 
 .image-block {
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    border: 1px solid lightblue;
     height: 150px;
 }
 
@@ -23,16 +23,16 @@
 
 .search-panel {
     height: 25px;
-    border-right: 1px solid rgba(0,0,0,0.5);
-    border-left: 1px solid rgba(0,0,0,0.5);
+    border-right: 1px solid lightblue;
+    border-left: 1px solid lightblue;
 }
 
-.searchImage {
+.search-image {
     width: 10px;
     height: 10px;
 }
 
-.fileImage {
+.file-image {
     width: 10px;
     height: 10px;
 }
@@ -43,10 +43,22 @@
 
 .product-search {
     height: 20px;
-    border: 1px solid rgba(0,0,0,0.5);
+    border: 1px solid lightblue;
+    border-bottom: none;
     text-align: center;
     font-weight: bold;
     background-color: aliceblue;
+}
+
+.search-button-block {
+    padding: 5px;
+    border: 1px solid lightblue;
+    border-top: none;
+}
+
+.search-button {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 /* Data Table */

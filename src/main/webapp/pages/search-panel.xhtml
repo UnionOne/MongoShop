@@ -5,14 +5,16 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-<f:view>
+<body>
+<ui:composition>
     <h:panelGroup layout="block" styleClass="search-panel">
-        <h:graphicImage value="/faces/resources/img/search.png" styleClass="searchImage"/>
+        <h:graphicImage value="/faces/resources/img/search.png" styleClass="search-image"/>
         <h:link value="Search" styleClass="link"/>
         <h:outputText value="&#160;"/>
         <h:outputText value="&#160;"/>
-        <h:graphicImage value="/faces/resources/img/file.png" styleClass="fileImage"/>
+        <h:graphicImage value="/faces/resources/img/file.png" styleClass="file-image"/>
         <h:link value="New Product" styleClass="link"/>
     </h:panelGroup>
-</f:view>
+</ui:composition>
+</body>
 </html>
