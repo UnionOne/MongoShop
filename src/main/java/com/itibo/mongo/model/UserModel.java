@@ -11,6 +11,7 @@ public class UserModel {
     private String publisher;
     private String artist;
     private String author;
+    private boolean editable;
 
     public UserModel(int sku, String type, String title, String publisher, String artist, String author) {
         this.sku = sku;
@@ -67,6 +68,14 @@ public class UserModel {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public boolean isEditable() {
+        return editable;
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable = editable;
     }
 
     @Override

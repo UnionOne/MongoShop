@@ -32,11 +32,13 @@
 .search-image {
     width: 10px;
     height: 10px;
+    margin: 8px 3px 0 8px;
 }
 
 .file-image {
     width: 10px;
     height: 10px;
+    margin: 8px 3px 0 8px;
 }
 
 .link {
@@ -71,6 +73,7 @@
 
 .data-table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 .data-table tbody tr td {
@@ -79,4 +82,30 @@
 
 .data-table thead tr th {
     border: 1px solid lightblue;
+}
+
+.pagination {
+    height: 20px;
+    border: 1px solid lightblue;
+    border-bottom: none;
+    border-top: none;
+    text-align: center;
+    font-weight: bold;
+    background-color: aliceblue;
+}
+
+.edit-button {
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.delete-button {
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.save-button {
+    margin: 5px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    cursor: pointer;
 }

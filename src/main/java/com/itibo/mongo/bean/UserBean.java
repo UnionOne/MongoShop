@@ -5,6 +5,7 @@ import com.itibo.mongo.model.UserModel;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,7 +15,9 @@ import java.util.List;
 
 @ViewScoped
 @ManagedBean(name = "users")
-public class UserBean {
+public class UserBean implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private List<UserModel> users;
 
     @PostConstruct
@@ -33,6 +36,18 @@ public class UserBean {
 
     public void setUsers(List<UserModel> users) {
         this.users = users;
+    }
+
+    public String save() {
+        for (UserModel user : users) {
+            user.setEditable(false);
+        }
+        return null;
+    }
+
+    public String edit(UserModel user) {
+        user.setEditable(true);
+        return null;
     }
 
     @Override
