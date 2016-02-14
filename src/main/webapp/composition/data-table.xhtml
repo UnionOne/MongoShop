@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+<ui:composition>
+    <h:panelGroup layout="block" styleClass="data-table-block">
+        <h:dataTable border="1" styleClass="data-table" value="#{users.users}" var="user">
+            <h:column>
+                <f:facet name="header">
+                    Sku
+                </f:facet>
+                <h:outputText value="#{user.sku}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    Type
+                </f:facet>
+                <h:outputText value="#{user.type}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    Title
+                </f:facet>
+                <h:outputText value="#{user.title}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    Publisher
+                </f:facet>
+                <h:outputText value="#{user.publisher}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    Artist
+                </f:facet>
+                <h:outputText value="#{user.artist}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    Author
+                </f:facet>
+                <h:outputText value="#{user.author}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    Edit
+                </f:facet>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    Delete
+                </f:facet>
+            </h:column>
+        </h:dataTable>
+    </h:panelGroup>
+</ui:composition>
+</body>
+</html>
