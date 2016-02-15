@@ -94,6 +94,19 @@
     background-color: aliceblue;
 }
 
+.pagination form input {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    padding: 0;
+    font: 10px Arial;
+}
+
+.pagination form input button {
+    width: 15px;
+    height: 15px;
+}
+
 .edit-button {
     box-shadow: 0 0 3px rgba(0,0,0,0.5);
     cursor: pointer;
