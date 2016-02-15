@@ -8,8 +8,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 50%;
     margin: 0 0 0 25%;
-    min-width: 600px;
-    min-height: 325px;
+    min-width: 715px;
+    min-height: 600px;
 }
 
 .image-block {
@@ -106,6 +106,6 @@
 
 .save-button {
     margin: 5px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }

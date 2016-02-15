@@ -71,6 +71,13 @@
             <version>1.0</version>
         </dependency>
 
+        <!-- Prime -->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>5.3</version>
+        </dependency>
+
     </dependencies>
     
 </project>
