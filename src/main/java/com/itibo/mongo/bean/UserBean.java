@@ -5,6 +5,8 @@ import com.itibo.mongo.model.UserModel;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.AbortProcessingException;
+import javax.faces.event.AjaxBehaviorEvent;
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
@@ -47,7 +49,12 @@ public class UserBean implements Serializable {
     }
 
     public List<UserModel> getSubstringList() {
-        return users.subList(currentPage * pageItems, currentPage * pageItems + pageItems);
+        int startPosition = currentPage * pageItems;
+        int endPosition = currentPage * pageItems + pageItems;
+        if(endPosition > users.size()) {
+            endPosition = users.size();
+        }
+        return users.subList(startPosition, endPosition);
     }
 
     public List<UserModel> getUsers() {
@@ -86,8 +93,8 @@ public class UserBean implements Serializable {
         return null;
     }
 
-    public void action(Integer index) {
-        currentPage = index;
+    public void action(AjaxBehaviorEvent event) throws AbortProcessingException {
+        currentPage = (int) event.getComponent().getAttributes().get("index") - 1;
     }
 
     @Override

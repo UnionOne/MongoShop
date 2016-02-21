@@ -9,7 +9,7 @@
     width: 50%;
     margin: 0 0 0 25%;
     min-width: 715px;
-    min-height: 600px;
+    min-height: 530px;
 }
 
 .image-block {
@@ -58,6 +58,7 @@
     padding: 5px;
     border: 1px solid lightblue;
     border-top: none;
+    border-bottom: none;
 }
 
 .search-button {
@@ -82,13 +83,12 @@
 
 .data-table thead tr th {
     border: 1px solid lightblue;
+    border-top: none;
 }
 
 .pagination {
     height: 20px;
     border: 1px solid lightblue;
-    border-bottom: none;
-    border-top: none;
     text-align: center;
     font-weight: bold;
     background-color: aliceblue;
@@ -115,6 +115,12 @@
 .delete-button {
     box-shadow: 0 0 3px rgba(0,0,0,0.5);
     cursor: pointer;
+}
+
+.save-button-block {
+    border: 1px solid lightblue;
+    border-bottom: none;
+    border-top: none;
 }
 
 .save-button {

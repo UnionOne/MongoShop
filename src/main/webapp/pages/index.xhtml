@@ -4,8 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:comp="http://java.sun.com/jsf/composite/components">
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
     <title>Mongo</title>
@@ -19,11 +18,9 @@
             <ui:include src="../block/image.xhtml"/>
             <ui:include src="../block/search-panel.xhtml"/>
             <ui:include src="../block/product-search.xhtml"/>
-            <comp:paginator action="#{users.action(users.currentPage)}" list="#{users.users}"
-                            currentPage="#{users.currentPage}" pageItems="#{users.pageItems}"/>
+            <ui:include src="../block/paginator.xhtml"/>
             <ui:include src="../block/data-table.xhtml"/>
-            <comp:paginator action="#{users.action(users.currentPage)}" list="#{users.users}"
-                            currentPage="#{users.currentPage}" pageItems="#{users.pageItems}"/>
+            <ui:include src="../block/paginator.xhtml"/>
         </h:panelGroup>
     </h:form>
 </f:view>
