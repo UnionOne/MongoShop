@@ -9,7 +9,7 @@
 <ui:composition>
     <h:panelGroup layout="block" styleClass="data-table-block">
         <h:form>
-            <h:dataTable styleClass="data-table" cellpadding="5" value="#{users.users}" var="user">
+            <h:dataTable styleClass="data-table" cellpadding="5" value="#{users.getSubstringList()}" var="user">
                 <h:column>
                     <f:facet name="header">
                         Sku
@@ -57,7 +57,8 @@
                     <f:facet name="header">
                         Edit
                     </f:facet>
-                    <h:commandButton value="Edit" action="#{users.edit(user)}" rendered="#{not user.editable}" styleClass="edit-button"/>
+                    <h:commandButton value="Edit" action="#{users.edit(user)}" rendered="#{not user.editable}"
+                                     styleClass="edit-button"/>
                 </h:column>
 
                 <h:column>
