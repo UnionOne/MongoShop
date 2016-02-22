@@ -81,18 +81,6 @@ public class UserBean implements Serializable {
         this.pageItems = pageItems;
     }
 
-    public String save() {
-        for (UserModel user : users) {
-            user.setEditable(false);
-        }
-        return null;
-    }
-
-    public String edit(UserModel user) {
-        user.setEditable(true);
-        return null;
-    }
-
     public void action(AjaxBehaviorEvent event) throws AbortProcessingException {
         currentPage = (int) event.getComponent().getAttributes().get("index") - 1;
     }

@@ -49,16 +49,14 @@
                     <f:facet name="header">
                         Author
                     </f:facet>
-                    <h:inputText value="#{user.author}" rendered="#{user.editable}"/>
-                    <h:outputText value="#{user.author}" rendered="#{not user.editable}"/>
+                    <h:outputText value="#{user.author}"/>
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
                         Edit
                     </f:facet>
-                    <h:commandButton value="Edit" action="#{users.edit(user)}" rendered="#{not user.editable}"
-                                     styleClass="edit-button"/>
+                    <h:commandButton value="Edit" styleClass="edit-button"/>
                 </h:column>
 
                 <h:column>
@@ -69,7 +67,7 @@
                 </h:column>
             </h:dataTable>
             <h:panelGroup layout="block" styleClass="save-button-block">
-                <h:commandButton value="Save" action="#{users.save}" styleClass="save-button"/>
+                <h:commandButton value="Save" styleClass="save-button"/>
             </h:panelGroup>
         </h:form>
     </h:panelGroup>

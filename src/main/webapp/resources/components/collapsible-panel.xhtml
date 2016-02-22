@@ -18,12 +18,11 @@
             </h:commandButton>
             <cc:renderFacet name="header"/>
         </h:panelGroup>
+
         <h:panelGroup layout="block" rendered="#{!cc.collapsed}">
             <cc:insertChildren/>
         </h:panelGroup>
 
         <h:outputStylesheet library="css" name="components.css"/>
     </cc:implementation>
-
 </ui:composition>
-

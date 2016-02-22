@@ -4,46 +4,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:comp="http://java.sun.com/jsf/composite/components"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 <body>
 <ui:composition>
-    <h:panelGroup layout="block" styleClass="product-search">
-        <h:outputText value="Product Search"/>
-    </h:panelGroup>
+    <h:form>
+        <comp:collapsible-panel id="panel" collapsed="#{collapsibleController.collapsed}">
+            <f:facet name="header">
+                <h:panelGroup layout="block" styleClass="product-search">
+                    <h:outputText value="Product Search"/>
+                </h:panelGroup>
+            </f:facet>
+            <h:panelGroup layout="block" styleClass="product-search-table">
+                <h:form>
+                    <h:panelGroup layout="block" style="border: 1px solid lightblue;">
+                        <h:panelGrid columns="4" cellspacing="5">
+                            <h:outputLabel value="sku:"/>
+                            <h:inputText size="20"/>
 
-    <h:panelGroup layout="block" styleClass="product-search-table">
-        <h:form>
-            <h:panelGroup layout="block" style="border: 1px solid lightblue;">
-                <h:panelGrid columns="4" cellspacing="5">
-                    <h:outputLabel value="sku:"/>
-                    <h:inputText size="20"/>
+                            <h:outputLabel value="Product Type:" style="margin-left: 150px;"/>
+                            <h:selectOneMenu>
+                                <f:selectItem itemValue="Audio"/>
+                                <f:selectItem itemValue="Video"/>
+                            </h:selectOneMenu>
 
-                    <h:outputLabel value="Product Type:" style="margin-left: 150px;"/>
-                    <h:selectOneMenu>
-                        <f:selectItem itemValue="Audio"/>
-                        <f:selectItem itemValue="Video"/>
-                    </h:selectOneMenu>
+                            <h:outputLabel value="Title:"/>
+                            <h:inputText size="20"/>
 
-                    <h:outputLabel value="Title:"/>
-                    <h:inputText size="20"/>
+                            <h:outputLabel value="Description:" style="margin-left: 150px;"/>
+                            <h:inputText size="20"/>
 
-                    <h:outputLabel value="Description:" style="margin-left: 150px;"/>
-                    <h:inputText size="20"/>
+                            <h:outputLabel value="Track:"/>
+                            <h:inputText size="20"/>
 
-                    <h:outputLabel value="Track:"/>
-                    <h:inputText size="20"/>
+                            <h:outputLabel value="Chapter:" style="margin-left: 150px;"/>
+                            <h:inputText size="20"/>
+                        </h:panelGrid>
+                    </h:panelGroup>
 
-                    <h:outputLabel value="Chapter:" style="margin-left: 150px;"/>
-                    <h:inputText size="20"/>
-                </h:panelGrid>
+                    <h:panelGroup layout="block" styleClass="search-button-block">
+                        <h:button value="search" styleClass="search-button"/>
+                    </h:panelGroup>
+                </h:form>
             </h:panelGroup>
-        </h:form>
-    </h:panelGroup>
-
-    <h:panelGroup layout="block" styleClass="search-button-block">
-        <h:button value="search" styleClass="search-button"/>
-    </h:panelGroup>
-
+        </comp:collapsible-panel>
+    </h:form>
 </ui:composition>
 </body>
 </html>
