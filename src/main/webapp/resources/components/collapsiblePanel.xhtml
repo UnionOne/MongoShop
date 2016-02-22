@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:composite="http://java.sun.com/jsf/composite">
+
+    <composite:interface>
+        <composite:attribute name="model" required="true">
+            <composite:attribute name="collapsed" required="true"/>
+            <composite:attribute name="toggle" required="true" method-signature="java.lang.String f()"/>
+        </composite:attribute>
+        <composite:actionSource name="toggle"/>
+        <composite:facet name="header"/>
+    </composite:interface>
+
+    <composite:implementation>
+        <h:panelGroup layout="block" styleClass="collapsiblePanel-header">
+            <h:commandButton id="toggle" action="#{cc.attrs.model.toggle}" styleClass="collapsib;ePanel-img"
+                    image="#{resource[cc.attrs.model.collapsed ? 'img:plus.png' : 'img:minus.png']}"/>
+            <composite:renderFacet name="header"/>
+        </h:panelGroup>
+        <h:panelGroup layout="block" rendered="#{cc.attrs.model.collapsed}">
+            <composite:insertChildren/>
+        </h:panelGroup>
+        <h:outputStylesheet library="css" name="components.css"/>
+    </composite:implementation>
+</ui:composition>
+
