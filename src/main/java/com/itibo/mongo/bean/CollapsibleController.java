@@ -8,7 +8,7 @@ import javax.faces.bean.SessionScoped;
  * Created by union on 22.02.2016.
  */
 
-@ManagedBean(name = "collapsible")
+@ManagedBean
 @SessionScoped
 public class CollapsibleController {
     private boolean collapsed;
@@ -26,8 +26,10 @@ public class CollapsibleController {
         this.collapsed = collapsed;
     }
 
-    public String toggle() {
-        this.collapsed = !this.collapsed;
-        return null;
+    @Override
+    public String toString() {
+        return "CollapsibleController{" +
+                "collapsed=" + collapsed +
+                '}';
     }
 }
