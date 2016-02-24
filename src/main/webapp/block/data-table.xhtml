@@ -9,7 +9,7 @@
 <ui:composition>
     <h:panelGroup layout="block" styleClass="data-table-block">
         <h:form>
-            <h:dataTable styleClass="data-table" cellpadding="5" value="#{users.getSubstringList()}" var="user">
+            <h:dataTable styleClass="table table-striped" cellpadding="5" value="#{users.getSubstringList()}" var="user">
                 <h:column>
                     <f:facet name="header">
                         Sku
@@ -56,18 +56,18 @@
                     <f:facet name="header">
                         Edit
                     </f:facet>
-                    <h:commandButton value="Edit" styleClass="edit-button"/>
+                    <h:commandButton value="Edit" styleClass="btn btn-info"/>
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
                         Delete
                     </f:facet>
-                    <h:commandButton value="Delete" styleClass="delete-button"/>
+                    <h:commandButton value="Delete" styleClass="btn btn-warning"/>
                 </h:column>
             </h:dataTable>
             <h:panelGroup layout="block" styleClass="save-button-block">
-                <h:commandButton value="Save" styleClass="save-button"/>
+                <h:commandButton value="Save" styleClass="btn btn-default btn-sm"/>
             </h:panelGroup>
         </h:form>
     </h:panelGroup>

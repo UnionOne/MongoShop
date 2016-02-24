@@ -19,31 +19,35 @@
                 <h:form>
                     <h:panelGroup layout="block" style="border: 1px solid lightblue;">
                         <h:panelGrid columns="4" cellspacing="5">
-                            <h:outputLabel value="sku:"/>
-                            <h:inputText size="20"/>
+                            <h:outputLabel value="sku:" styleClass="col-sm-2 control-label"/>
+                            <h:inputText size="20" styleClass="form-control"/>
 
-                            <h:outputLabel value="Product Type:" style="margin-left: 150px;"/>
-                            <h:selectOneMenu>
+                            <h:outputLabel value="Product Type:" styleClass="col-sm-2 control-label"
+                                           style="margin-left: 50px; margin-top: 5px;"/>
+                            <h:selectOneMenu styleClass="btn btn-default btn-sm dropdown-toggle" style="height: 24px;">
                                 <f:selectItem itemValue="Audio"/>
                                 <f:selectItem itemValue="Video"/>
                             </h:selectOneMenu>
 
-                            <h:outputLabel value="Title:"/>
-                            <h:inputText size="20"/>
+                            <h:outputLabel value="Title:" styleClass="col-sm-2 control-label"/>
+                            <h:inputText size="20" styleClass="form-control" style="margin-top: -5px;"/>
 
-                            <h:outputLabel value="Description:" style="margin-left: 150px;"/>
-                            <h:inputText size="20"/>
+                            <h:outputLabel value="Description:" styleClass="col-sm-2 control-label"
+                                           style="margin-left: 50px;"/>
+                            <h:inputText size="20" styleClass="form-control" style="margin-top: -5px;"/>
 
-                            <h:outputLabel value="Track:"/>
-                            <h:inputText size="20"/>
+                            <h:outputLabel value="Track:" styleClass="col-sm-2 control-label"
+                                           style="margin-top: 10px;"/>
+                            <h:inputText size="20" styleClass="form-control" style="margin-top: 5px;"/>
 
-                            <h:outputLabel value="Chapter:" style="margin-left: 150px;"/>
-                            <h:inputText size="20"/>
+                            <h:outputLabel value="Chapter:" styleClass="col-sm-2 control-label"
+                                           style="margin-left: 50px; margin-top: 10px;"/>
+                            <h:inputText size="20" styleClass="form-control" style="margin-top: 5px;"/>
                         </h:panelGrid>
                     </h:panelGroup>
 
                     <h:panelGroup layout="block" styleClass="search-button-block">
-                        <h:button value="search" styleClass="search-button"/>
+                        <h:button value="Search" styleClass="btn btn-default btn-sm"/>
                     </h:panelGroup>
                 </h:form>
             </h:panelGroup>

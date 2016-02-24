@@ -16,14 +16,14 @@
 
     <composite:implementation>
         <ui:repeat var="link" value="#{cc.getCountPages(cc.attrs.list.size(), cc.attrs.pageItems)}" varStatus="status">
-            <h:commandLink style="padding: 5px;" styleClass="#{cc.attrs.currentPage eq status.index ? 'selected' : ''}">
+            <h:commandLink style="padding: 0;" styleClass="#{cc.attrs.currentPage eq status.index ? 'selected' : ''}">
                 <f:attribute name="index" value="#{link}"/>
-                <h:outputText value="#{link}"/>
+                <h:outputText value="#{link}" styleClass="btn btn-default btn-xs" style="padding: 0 5px;"/>
                 <f:ajax render="@form" event="click" listener="#{cc.action}"/>
             </h:commandLink>
         </ui:repeat>
 
-        <h:selectOneMenu value="#{cc.attrs.pageItems}">
+        <h:selectOneMenu value="#{cc.attrs.pageItems}" styleClass="btn btn-xs dropdown-toggle" style="height: 18px;">
             <f:selectItem itemValue="3" itemLabel="3"/>
             <f:selectItem itemValue="5" itemLabel="5"/>
             <f:selectItem itemValue="7" itemLabel="7"/>

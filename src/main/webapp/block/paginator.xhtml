@@ -6,13 +6,11 @@
         xmlns:ui="http://java.sun.com/jsf/facelets"
         xmlns:comp="http://java.sun.com/jsf/composite/components">
 
-    <h:panelGroup layout="block" styleClass="pagination">
-        <h:panelGroup styleClass="paginator" layout="block">
-            <comp:paginator action="#{users.action}"
-                            list="#{users.users}"
-                            currentPage="#{users.currentPage}"
-                            pageItems="#{users.pageItems}"/>
-        </h:panelGroup>
+    <h:panelGroup layout="block" styleClass="paginatior-block">
+        <comp:paginator action="#{users.action}"
+                        list="#{users.users}"
+                        currentPage="#{users.currentPage}"
+                        pageItems="#{users.pageItems}"/>
     </h:panelGroup>
 </f:view>
 
