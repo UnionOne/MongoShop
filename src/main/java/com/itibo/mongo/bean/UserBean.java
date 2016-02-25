@@ -7,7 +7,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.AbortProcessingException;
 import javax.faces.event.AjaxBehaviorEvent;
-import javax.jws.soap.SOAPBinding;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.LinkedList;
@@ -36,35 +35,35 @@ public class UserBean implements Serializable {
         userModelList = new LinkedList<>();
         users = new LinkedList<>();
 
-        users.add(new UserModel(1001, "Audio Album", "A Love Supreme", "Sony Music", "John Coltrane", ""));
-        users.add(new UserModel(1002, "Audio Album", "Zdorovo i Vechno", "Grob Records", "Egor Letov", "Egor Letov"));
-        users.add(new UserModel(1003, "Audio Track", "Ivan Govnon", "Grob Records", "Egor Letov", "Egor Letov"));
-        users.add(new UserModel(1004, "Audio Track", "Pesnya pro Lenina", "Grob Records", "Egor Letov", "Egor Letov"));
-        users.add(new UserModel(1005, "Audio Track", "KGB-Rock", "Grob Records", "Egor Letov", "Egor Letov"));
-        users.add(new UserModel(1006, "Audio Album", "Na nachih glazah", "Grob Records", "Egor Letov", "Egor Letov"));
-        users.add(new UserModel(1007, "Audio Album", "Zdorovo i Vechno", "Grob Records", "Egor Letov", "Egor Letov"));
-        users.add(new UserModel(1008, "Audio Track", "Ivan Govnon", "Grob Records", "Egor Letov", "Egor Letov"));
-        users.add(new UserModel(1009, "Audio Track", "Pesnya pro Lenina", "Grob Records", "Egor Letov", "Egor Letov"));
-        users.add(new UserModel(1010, "Audio Track", "KGB-Rock", "Grob Records", "Egor Letov", "Egor Letov"));
-        users.add(new UserModel(1011, "Audio Album", "A Love Supreme", "Sony Music", "John Coltrane", ""));
-        users.add(new UserModel(1012, "Audio Album", "Zdorovo i Vechno", "Grob Records", "Egor Letov", "Egor Letov"));
-        users.add(new UserModel(1013, "Audio Track", "Ivan Govnon", "Grob Records", "Egor Letov", "Egor Letov"));
-        users.add(new UserModel(1014, "Audio Track", "Pesnya pro Lenina", "Grob Records", "Egor Letov", "Egor Letov"));
-        users.add(new UserModel(1015, "Audio Track", "KGB-Rock", "Grob Records", "Egor Letov", "Egor Letov"));
+        users.add(new UserModel("1001", "Audio Album", "A Love Supreme", "Sony Music", "John Coltrane", ""));
+        users.add(new UserModel("1002", "Audio Album", "Zdorovo i Vechno", "Grob Records", "Egor Letov", "Egor Letov"));
+        users.add(new UserModel("1003", "Audio Track", "Ivan Govnon", "Grob Records", "Egor Letov", "Egor Letov"));
+        users.add(new UserModel("1004", "Audio Track", "Pesnya pro Lenina", "Grob Records", "Egor Letov", "Egor Letov"));
+        users.add(new UserModel("1005", "Audio Track", "KGB-Rock", "Grob Records", "Egor Letov", "Egor Letov"));
+        users.add(new UserModel("1006", "Audio Album", "Na nachih glazah", "Grob Records", "Egor Letov", "Egor Letov"));
+        users.add(new UserModel("1007", "Audio Album", "Zdorovo i Vechno", "Grob Records", "Egor Letov", "Egor Letov"));
+        users.add(new UserModel("1008", "Audio Track", "Ivan Govnon", "Grob Records", "Egor Letov", "Egor Letov"));
+        users.add(new UserModel("1009", "Audio Track", "Pesnya pro Lenina", "Grob Records", "Egor Letov", "Egor Letov"));
+        users.add(new UserModel("1010", "Audio Track", "KGB-Rock", "Grob Records", "Egor Letov", "Egor Letov"));
+        users.add(new UserModel("1011", "Audio Album", "A Love Supreme", "Sony Music", "John Coltrane", ""));
+        users.add(new UserModel("1012", "Audio Album", "Zdorovo i Vechno", "Grob Records", "Egor Letov", "Egor Letov"));
+        users.add(new UserModel("1013", "Audio Track", "Ivan Govnon", "Grob Records", "Egor Letov", "Egor Letov"));
+        users.add(new UserModel("1014", "Audio Track", "Pesnya pro Lenina", "Grob Records", "Egor Letov", "Egor Letov"));
+        users.add(new UserModel("1015", "Audio Track", "KGB-Rock", "Grob Records", "Egor Letov", "Egor Letov"));
     }
 
-    private boolean isEmptyRequest() throws  IllegalAccessException {
+    private boolean isEmptyRequest() throws IllegalAccessException {
         Field[] fields = UserModel.class.getDeclaredFields();
         boolean flag;
 
-        for(Field field : fields) {
+        for (Field field : fields) {
             flag = field.isAccessible();
-            if(!flag) {
+            if (!flag) {
                 field.setAccessible(true);
             }
 
             Object parameterValue = field.get(searchModel);
-            if(parameterValue != null && !"".equals(parameterValue.toString())) {
+            if (parameterValue != null && !"".equals(parameterValue.toString())) {
                 return false;
             }
             field.setAccessible(flag);
@@ -72,13 +71,13 @@ public class UserBean implements Serializable {
         return true;
     }
 
-    private boolean isEquels(UserModel user) throws IllegalAccessException {
+    private boolean isEqual(UserModel user) throws IllegalAccessException {
         Field[] fields = UserModel.class.getDeclaredFields();
         boolean flag;
         boolean isEquals;
-        for(Field field : fields) {
+        for (Field field : fields) {
             flag = field.isAccessible();
-            if(!flag) {
+            if (!flag) {
                 field.setAccessible(true);
             }
 
@@ -87,10 +86,10 @@ public class UserBean implements Serializable {
             field.setAccessible(flag);
 
             isEquals = (parameterValue != null &&
-                        parameterValue.toString().isEmpty() ||
-                        userField.toString().toLowerCase().contains(parameterValue.toString().toLowerCase()));
+                    (parameterValue.toString().isEmpty() ||
+                            userField.toString().toLowerCase().contains(parameterValue.toString().toLowerCase())));
 
-            if(!isEquals) {
+            if (!isEquals) {
                 return false;
             }
         }
@@ -99,9 +98,9 @@ public class UserBean implements Serializable {
 
     public List<UserModel> applyFilter() throws IllegalAccessException {
         userModelList.clear();
-        if(!isEmptyRequest()) {
+        if (!isEmptyRequest()) {
             for (UserModel user : users) {
-                if(isEquels(user)) {
+                if (isEqual(user)) {
                     userModelList.add(user);
                 }
             }
@@ -116,7 +115,7 @@ public class UserBean implements Serializable {
 
         int startPosition = currentPage * pageItems;
         int endPosition = currentPage * pageItems + pageItems;
-        if(endPosition > result.size()) {
+        if (endPosition > result.size()) {
             endPosition = result.size();
         }
         return result.subList(startPosition, endPosition);

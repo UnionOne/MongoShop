@@ -1,4 +1,4 @@
-package com.itibo.mongo.bean;
+package com.itibo.mongo.controller;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;

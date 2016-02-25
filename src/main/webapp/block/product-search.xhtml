@@ -17,37 +17,44 @@
             </f:facet>
             <h:panelGroup layout="block" styleClass="product-search-table">
                 <h:form>
-                    <h:panelGroup layout="block" style="border: 1px solid lightblue;">
+                    <h:panelGroup layout="block" style="border: 1px solid lightblue; border-bottom: none;">
                         <h:panelGrid columns="4" cellspacing="5">
                             <h:outputLabel value="sku:" styleClass="col-sm-2 control-label"/>
-                            <h:inputText size="20" styleClass="form-control"/>
+                            <h:inputText value="#{userBean.searchModel.sku}" styleClass="form-control"/>
 
                             <h:outputLabel value="Product Type:" styleClass="col-sm-2 control-label"
                                            style="margin-left: 50px; margin-top: 5px;"/>
-                            <h:selectOneMenu styleClass="btn btn-default btn-sm dropdown-toggle" style="height: 24px;">
-                                <f:selectItem itemValue="Audio"/>
-                                <f:selectItem itemValue="Video"/>
+                            <h:selectOneMenu value="#{userBean.searchModel.type}"
+                                             styleClass="btn btn-default btn-sm dropdown-toggle" style="height: 24px;">
+                                <f:selectItem itemValue="Audio Track"/>
+                                <f:selectItem itemValue="Audio Album"/>
                             </h:selectOneMenu>
 
                             <h:outputLabel value="Title:" styleClass="col-sm-2 control-label"/>
-                            <h:inputText size="20" styleClass="form-control" style="margin-top: -5px;"/>
+                            <h:inputText value="#{userBean.searchModel.title}" styleClass="form-control"
+                                         style="margin-top: -5px;"/>
 
-                            <h:outputLabel value="Description:" styleClass="col-sm-2 control-label"
+                            <h:outputLabel value="Publisher:" styleClass="col-sm-2 control-label"
                                            style="margin-left: 50px;"/>
-                            <h:inputText size="20" styleClass="form-control" style="margin-top: -5px;"/>
+                            <h:inputText value="#{userBean.searchModel.publisher}" styleClass="form-control"
+                                         style="margin-top: -5px;"/>
 
-                            <h:outputLabel value="Track:" styleClass="col-sm-2 control-label"
+                            <h:outputLabel value="Artist:" styleClass="col-sm-2 control-label"
                                            style="margin-top: 10px;"/>
-                            <h:inputText size="20" styleClass="form-control" style="margin-top: 5px;"/>
+                            <h:inputText value="#{userBean.searchModel.artist}" styleClass="form-control"
+                                         style="margin-top: 5px;"/>
 
-                            <h:outputLabel value="Chapter:" styleClass="col-sm-2 control-label"
+                            <h:outputLabel value="Author:" styleClass="col-sm-2 control-label"
                                            style="margin-left: 50px; margin-top: 10px;"/>
-                            <h:inputText size="20" styleClass="form-control" style="margin-top: 5px;"/>
+                            <h:inputText value="#{userBean.searchModel.author}" styleClass="form-control"
+                                         style="margin-top: 5px;"/>
                         </h:panelGrid>
                     </h:panelGroup>
 
                     <h:panelGroup layout="block" styleClass="search-button-block">
-                        <h:button value="Search" styleClass="btn btn-default btn-sm"/>
+                        <h:commandButton value="Search" styleClass="btn btn-default btn-sm">
+                            <f:ajax execute="@form" render="@form"/>
+                        </h:commandButton>
                     </h:panelGroup>
                 </h:form>
             </h:panelGroup>

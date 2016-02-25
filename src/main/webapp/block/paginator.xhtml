@@ -8,7 +8,7 @@
 
     <h:panelGroup layout="block" styleClass="paginatior-block">
         <comp:paginator action="#{userBean.action}"
-                        list="#{userBean.users}"
+                        list="#{userBean.userModelList}"
                         currentPage="#{userBean.currentPage}"
                         pageItems="#{userBean.pageItems}"/>
     </h:panelGroup>

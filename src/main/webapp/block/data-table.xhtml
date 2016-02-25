@@ -10,7 +10,8 @@
     <ui:include src="../block/paginator.xhtml"/>
     <h:panelGroup layout="block" styleClass="data-table-block">
         <h:form>
-            <h:dataTable styleClass="table table-striped" cellpadding="5" value="#{userBean.getSubstringList()}" var="user">
+            <h:dataTable styleClass="table table-striped" cellpadding="5" value="#{userBean.getSubstringList()}"
+                         var="user">
                 <h:column>
                     <f:facet name="header">
                         Sku

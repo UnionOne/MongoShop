@@ -8,14 +8,14 @@ import javax.faces.bean.SessionScoped;
 
 @SessionScoped
 public class UserModel {
-    private int sku;
+    private String sku;
     private String type;
     private String title;
     private String publisher;
     private String artist;
     private String author;
 
-    public UserModel(int sku, String type, String title, String publisher, String artist, String author) {
+    public UserModel(String sku, String type, String title, String publisher, String artist, String author) {
         this.sku = sku;
         this.type = type;
         this.title = title;
@@ -28,11 +28,11 @@ public class UserModel {
 
     }
 
-    public int getSku() {
+    public String getSku() {
         return sku;
     }
 
-    public void setSku(int sku) {
+    public void setSku(String sku) {
         this.sku = sku;
     }
 
@@ -74,17 +74,5 @@ public class UserModel {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    @Override
-    public String toString() {
-        return "UserModel{" +
-                "sku=" + sku +
-                ", type='" + type + '\'' +
-                ", title='" + title + '\'' +
-                ", publisher='" + publisher + '\'' +
-                ", artist='" + artist + '\'' +
-                ", author='" + author + '\'' +
-                '}';
     }
 }
