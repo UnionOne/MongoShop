@@ -7,10 +7,10 @@
         xmlns:comp="http://java.sun.com/jsf/composite/components">
 
     <h:panelGroup layout="block" styleClass="paginatior-block">
-        <comp:paginator action="#{users.action}"
-                        list="#{users.users}"
-                        currentPage="#{users.currentPage}"
-                        pageItems="#{users.pageItems}"/>
+        <comp:paginator action="#{userBean.action}"
+                        list="#{userBean.users}"
+                        currentPage="#{userBean.currentPage}"
+                        pageItems="#{userBean.pageItems}"/>
     </h:panelGroup>
 </f:view>
 

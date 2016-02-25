@@ -1,9 +1,12 @@
 package com.itibo.mongo.model;
 
+import javax.faces.bean.SessionScoped;
+
 /**
  * Created by union on 15.02.2016.
  */
 
+@SessionScoped
 public class UserModel {
     private int sku;
     private String type;
@@ -19,6 +22,10 @@ public class UserModel {
         this.publisher = publisher;
         this.artist = artist;
         this.author = author;
+    }
+
+    public UserModel() {
+
     }
 
     public int getSku() {

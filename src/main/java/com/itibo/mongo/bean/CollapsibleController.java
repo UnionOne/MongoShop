@@ -25,11 +25,4 @@ public class CollapsibleController {
     public void setCollapsed(boolean collapsed) {
         this.collapsed = collapsed;
     }
-
-    @Override
-    public String toString() {
-        return "CollapsibleController{" +
-                "collapsed=" + collapsed +
-                '}';
-    }
 }

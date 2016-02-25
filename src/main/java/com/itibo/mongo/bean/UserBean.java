@@ -7,7 +7,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.AbortProcessingException;
 import javax.faces.event.AjaxBehaviorEvent;
+import javax.jws.soap.SOAPBinding;
 import java.io.Serializable;
+import java.lang.reflect.Field;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,21 +18,24 @@ import java.util.List;
  */
 
 @ViewScoped
-@ManagedBean(name = "users")
+@ManagedBean
 public class UserBean implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private int currentPage;
     private int pageItems;
-
+    private UserModel searchModel;
+    private List<UserModel> userModelList;
     private List<UserModel> users;
 
     @PostConstruct
     public void init() {
         currentPage = 0;
         pageItems = 3;
-
+        searchModel = new UserModel();
+        userModelList = new LinkedList<>();
         users = new LinkedList<>();
+
         users.add(new UserModel(1001, "Audio Album", "A Love Supreme", "Sony Music", "John Coltrane", ""));
         users.add(new UserModel(1002, "Audio Album", "Zdorovo i Vechno", "Grob Records", "Egor Letov", "Egor Letov"));
         users.add(new UserModel(1003, "Audio Track", "Ivan Govnon", "Grob Records", "Egor Letov", "Egor Letov"));
@@ -48,13 +53,77 @@ public class UserBean implements Serializable {
         users.add(new UserModel(1015, "Audio Track", "KGB-Rock", "Grob Records", "Egor Letov", "Egor Letov"));
     }
 
-    public List<UserModel> getSubstringList() {
+    private boolean isEmptyRequest() throws  IllegalAccessException {
+        Field[] fields = UserModel.class.getDeclaredFields();
+        boolean flag;
+
+        for(Field field : fields) {
+            flag = field.isAccessible();
+            if(!flag) {
+                field.setAccessible(true);
+            }
+
+            Object parameterValue = field.get(searchModel);
+            if(parameterValue != null && !"".equals(parameterValue.toString())) {
+                return false;
+            }
+            field.setAccessible(flag);
+        }
+        return true;
+    }
+
+    private boolean isEquels(UserModel user) throws IllegalAccessException {
+        Field[] fields = UserModel.class.getDeclaredFields();
+        boolean flag;
+        boolean isEquals;
+        for(Field field : fields) {
+            flag = field.isAccessible();
+            if(!flag) {
+                field.setAccessible(true);
+            }
+
+            Object parameterValue = field.get(searchModel);
+            Object userField = field.get(user);
+            field.setAccessible(flag);
+
+            isEquals = (parameterValue != null &&
+                        parameterValue.toString().isEmpty() ||
+                        userField.toString().toLowerCase().contains(parameterValue.toString().toLowerCase()));
+
+            if(!isEquals) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public List<UserModel> applyFilter() throws IllegalAccessException {
+        userModelList.clear();
+        if(!isEmptyRequest()) {
+            for (UserModel user : users) {
+                if(isEquels(user)) {
+                    userModelList.add(user);
+                }
+            }
+            return userModelList;
+        }
+        userModelList.addAll(users);
+        return userModelList;
+    }
+
+    public List<UserModel> getSubstringList() throws IllegalAccessException {
+        List<UserModel> result = applyFilter();
+
         int startPosition = currentPage * pageItems;
         int endPosition = currentPage * pageItems + pageItems;
-        if(endPosition > users.size()) {
-            endPosition = users.size();
+        if(endPosition > result.size()) {
+            endPosition = result.size();
         }
-        return users.subList(startPosition, endPosition);
+        return result.subList(startPosition, endPosition);
+    }
+
+    public void action(AjaxBehaviorEvent event) throws AbortProcessingException {
+        currentPage = (int) event.getComponent().getAttributes().get("index") - 1;
     }
 
     public List<UserModel> getUsers() {
@@ -81,14 +150,19 @@ public class UserBean implements Serializable {
         this.pageItems = pageItems;
     }
 
-    public void action(AjaxBehaviorEvent event) throws AbortProcessingException {
-        currentPage = (int) event.getComponent().getAttributes().get("index") - 1;
+    public UserModel getSearchModel() {
+        return searchModel;
     }
 
-    @Override
-    public String toString() {
-        return "UserBean{" +
-                "users=" + users +
-                '}';
+    public void setSearchModel(UserModel searchModel) {
+        this.searchModel = searchModel;
+    }
+
+    public List<UserModel> getUserModelList() {
+        return userModelList;
+    }
+
+    public void setUserModelList(List<UserModel> userModelList) {
+        this.userModelList = userModelList;
     }
 }
