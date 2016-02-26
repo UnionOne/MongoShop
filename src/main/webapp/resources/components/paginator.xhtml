@@ -16,9 +16,12 @@
 
     <composite:implementation>
         <ui:repeat var="link" value="#{cc.getCountPages(cc.attrs.list.size(), cc.attrs.pageItems)}" varStatus="status">
-            <h:commandLink style="padding: 0;" styleClass="#{cc.attrs.currentPage eq status.index ? 'selected' : ''}">
+            <h:commandLink style="padding: 0; text-decoration: none;"
+                           styleClass="#{cc.attrs.currentPage eq status.index ? '' : ''}">
                 <f:attribute name="index" value="#{link}"/>
-                <h:outputText value="#{link}" styleClass="btn btn-default btn-xs" style="padding: 0 5px;"/>
+                <h:outputText value="#{link}"
+                              styleClass="#{cc.attrs.currentPage eq status.index ? 'btn btn-default btn-xs selected' : 'btn btn-default btn-xs'}"
+                              style="padding: 0 5px;"/>
                 <f:ajax render="@form" event="click" listener="#{cc.action}"/>
             </h:commandLink>
         </ui:repeat>
