@@ -11,11 +11,13 @@
     </cc:interface>
 
     <cc:implementation>
-        <h:panelGroup layout="block" styleClass="collapsiblePanel-header">
-            <h:commandButton id="toggle" actionListener="#{cc.toggle}" styleClass="collapsiblePanel-img"
-                             image="#{resource[cc.collapsed ? 'img:plus.png' : 'img:minus.png']}">
+        <h:panelGroup layout="block" styleClass="">
+            <h:commandLink id="toggle" actionListener="#{cc.toggle}" style="text-decoration: none;">
+                <h:panelGroup layout="block" styleClass="product-search">
+                    <h:outputText value="Product Search"/>
+                </h:panelGroup>
                 <f:ajax execute="@this" render="@form"/>
-            </h:commandButton>
+            </h:commandLink>
             <cc:renderFacet name="header"/>
         </h:panelGroup>
 

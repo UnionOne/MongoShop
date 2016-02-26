@@ -10,11 +10,7 @@
 <ui:composition>
     <h:form>
         <comp:collapsible-panel id="panel" collapsed="#{collapsibleController.collapsed}">
-            <f:facet name="header">
-                <h:panelGroup layout="block" styleClass="product-search">
-                    <h:outputText value="Product Search"/>
-                </h:panelGroup>
-            </f:facet>
+            <f:facet name="header"/>
             <h:panelGroup layout="block" styleClass="product-search-table">
                 <h:form>
                     <h:panelGroup layout="block" style="border: 1px solid lightblue; border-bottom: none;">
@@ -25,7 +21,7 @@
                             <h:outputLabel value="Product Type:" styleClass="col-sm-2 control-label"
                                            style="margin-left: 50px; margin-top: 5px;"/>
                             <h:selectOneMenu value="#{userBean.searchModel.type}"
-                                             styleClass="btn btn-default btn-sm dropdown-toggle" style="height: 24px;">
+                                             styleClass="btn btn-default btn-sm dropdown-toggle" style="height: 30px;">
                                 <f:selectItem itemValue="Audio Track"/>
                                 <f:selectItem itemValue="Audio Album"/>
                             </h:selectOneMenu>

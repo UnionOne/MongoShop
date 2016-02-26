@@ -7,7 +7,7 @@
 .wrapper {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 50%;
-    margin: 0 auto;
+    margin: 0 auto 30px auto;
     min-width: 715px;
     min-height: 407px;
 }
@@ -19,7 +19,7 @@
 
 .form-control {
     width: 150px;
-    height: 10px;
+    height: 13px;
 }
 
 .image {
@@ -88,4 +88,15 @@
     color: #fff;
     background-color: #204d74;
     border-color: #122b40;
+}
+
+.table > tbody > tr > td {
+    padding: 0;
+    vertical-align: baseline;
+}
+
+.collapse-panel {
+    width: 5px;
+    height: 5px;
+    border: 1px solid;
 }
