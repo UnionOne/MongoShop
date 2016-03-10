@@ -12,10 +12,6 @@ import java.lang.reflect.Field;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by union on 15.02.2016.
- */
-
 @ViewScoped
 @ManagedBean
 public class UserBean implements Serializable {

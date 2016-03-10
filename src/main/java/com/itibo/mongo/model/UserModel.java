@@ -2,10 +2,6 @@ package com.itibo.mongo.model;
 
 import javax.faces.bean.SessionScoped;
 
-/**
- * Created by union on 15.02.2016.
- */
-
 @SessionScoped
 public class UserModel {
     private String sku;
@@ -25,7 +21,6 @@ public class UserModel {
     }
 
     public UserModel() {
-
     }
 
     public String getSku() {

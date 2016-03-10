@@ -6,10 +6,6 @@ import javax.faces.component.UINamingContainer;
 import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 
-/**
- * Created by union on 21.02.2016.
- */
-
 @FacesComponent("paginator")
 public class Paginator extends UINamingContainer {
 

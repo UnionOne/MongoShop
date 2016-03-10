@@ -7,10 +7,6 @@ import javax.faces.component.UINamingContainer;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
-/**
- * Created by union on 22.02.2016.
- */
-
 @FacesComponent("collapsible")
 public class CollapsiblePanel extends UINamingContainer {
     enum PropertyKeys {

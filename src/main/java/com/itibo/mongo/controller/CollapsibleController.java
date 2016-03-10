@@ -4,10 +4,6 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-/**
- * Created by union on 22.02.2016.
- */
-
 @ManagedBean
 @SessionScoped
 public class CollapsibleController {
